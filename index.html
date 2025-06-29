@@ -6,16 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
   </head>
-
-  <script>
-  // Verifica si hay una ruta en el hash al cargar la página
-  if (window.location.hash) {
-    const route = window.location.hash.substring(1);
-    history.replaceState(null, null, '/charai' + (route === '/' ? '' : route));
-  }
-</script>
   
   <body>
+
+    <script>
+  // Corrige URLs mal escritas (charailogin → charai/login)
+  if (window.location.pathname.includes('charailogin')) {
+    const newPath = window.location.pathname.replace('charailogin', 'charai/login');
+    window.history.replaceState({}, '', newPath);
+    window.location.reload();
+  }
+</script>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

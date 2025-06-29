@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
-<script>
+
+  <script>
   // Verifica si hay una ruta en el hash al cargar la página
   if (window.location.hash) {
     const route = window.location.hash.substring(1);
     history.replaceState(null, null, '/charai' + (route === '/' ? '' : route));
   }
 </script>
+  
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

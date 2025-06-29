@@ -11,3 +11,10 @@
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+<script>
+  // Verifica si hay una ruta en el hash al cargar la página
+  if (window.location.hash) {
+    const route = window.location.hash.substring(1);
+    history.replaceState(null, null, '/charai' + (route === '/' ? '' : route));
+  }
+</script>

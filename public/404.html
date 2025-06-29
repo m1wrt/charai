@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // Captura la ruta solicitada
+    const path = window.location.pathname.split('/charai/')[1] || '';
+    // Redirige a index.html con la ruta como hash
+    window.location.href = '/charai/#' + path;
+    // Almacena la ruta para que la SPA pueda procesarla
+    localStorage.setItem('redirectPath', path);
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
